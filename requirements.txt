@@ -3,3 +3,4 @@ django
 django-bootstrap3
 django-braces
 django-heroku
+gunicorn
