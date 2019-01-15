@@ -8,7 +8,6 @@ from django.views import generic
 
 from braces.views import SelectRelatedMixin
 from . import models
-from . import forms
 
 
 # Create your views here.
@@ -76,5 +75,5 @@ class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
         return queryset.filter(user_id=self.request.user.id)
 
     def delete(self, *args, **kwargs):
-        messages.success(self.request, **kwargs)
+        messages.success(self.request, "deleted successfully")
         return super().delete(*args, **kwargs)
